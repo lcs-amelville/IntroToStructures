@@ -33,6 +33,22 @@ import Foundation
  */
 // Begin your work here...
 
+/// The area of a triangle
+struct triangle {
+    var length: Double
+    var width: Double
+}
+
+var area: Double {
+   return lenght * width / 2
+}
+
+var triangleAreaDescription: String {
+       return "The area of the Triangle is " + String(format: "%.1f", area) + " square units."
+}
+
+var aTriangle = triangle(length: 10.0, width: 4.0)
+
 
 
 /*:

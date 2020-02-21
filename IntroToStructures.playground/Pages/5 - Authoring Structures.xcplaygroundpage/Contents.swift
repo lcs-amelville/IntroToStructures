@@ -37,18 +37,40 @@ import Foundation
 struct triangle {
     var length: Double
     var width: Double
-}
 
 var area: Double {
-   return lenght * width / 2
+   return length * width / 2
 }
 
 var triangleAreaDescription: String {
        return "The area of the Triangle is " + String(format: "%.1f", area) + " square units."
 }
 
+}
+
 var aTriangle = triangle(length: 10.0, width: 4.0)
 
+aTriangle.area
+aTriangle.triangleAreaDescription
+
+struct cylanderVolume {
+    var height: Double
+    var radius: Double
+
+    var volume: Double {
+        return Double.pi * pow(radius, 2) * height
+    }
+
+    var cylanderVolumeDescription: String {
+    return "The volume of the Cylander is " + String(format: "%.1f", volume) + " Cubed units."
+    }
+}
+
+var vCylander = cylanderVolume(height: 5, radius: 2)
+
+vCylander.volume
+
+vCylander.cylanderVolumeDescription
 
 
 /*:

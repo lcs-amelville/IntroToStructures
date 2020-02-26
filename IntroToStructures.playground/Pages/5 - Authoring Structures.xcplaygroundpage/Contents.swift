@@ -37,22 +37,36 @@ import Foundation
 struct triangle {
     var length: Double
     var width: Double
-
+    var a: Double
+    var b: Double
+    var c: Double
+    
+    
 var area: Double {
    return length * width / 2
 }
 
+    var perimeter: Double {
+        return a + b + c
+    }
+    
+    
 var triangleAreaDescription: String {
        return "The area of the Triangle is " + String(format: "%.1f", area) + " square units."
 }
 
+    var trianglePerimeterDescription: String {
+    return "The Perimeter of the Triangle is " + String(format: "%.1f", perimeter) + " units."
 }
-
-var aTriangle = triangle(length: 10.0, width: 4.0)
+}
+var aTriangle = triangle(length: 10.0, width: 4.0, a: 2, b: 2, c: 2)
 
 aTriangle.area
 aTriangle.triangleAreaDescription
+aTriangle.perimeter
 
+
+/// Cylander Volume using height and radius
 struct cylanderVolume {
     var height: Double
     var radius: Double
@@ -60,19 +74,80 @@ struct cylanderVolume {
     var volume: Double {
         return Double.pi * pow(radius, 2) * height
     }
+    
+    var surfaceArea: Double {
+        return 2 * Double.pi * pow(radius, 2) + 2 * Double.pi * radius * height
+    }
 
     var cylanderVolumeDescription: String {
     return "The volume of the Cylander is " + String(format: "%.1f", volume) + " Cubed units."
+    }
+    var cylanderSurfaceAreaDescription: String {
+      return "The Perimeter of the Cylander is " + String(format: "%.1f", surfaceArea) + " units."
     }
 }
 
 var vCylander = cylanderVolume(height: 5, radius: 2)
 
 vCylander.volume
-
+vCylander.cylanderSurfaceAreaDescription
 vCylander.cylanderVolumeDescription
 
 
+
+/// Sphere Volume using radius
+
+struct sphereVolume {
+    var radius: Double
+    
+    var volume : Double {
+        return 4 / 3 * Double.pi * pow(radius, 3)
+    }
+    var surfaceArea: Double {
+        return 4 * Double.pi * pow(radius, 2)
+    }
+    
+    var sphereVolumeDiscription: String {
+        return "The volume of the Sphere is " + String(format: "%.1f", volume) + " Cubed units."
+    }
+    var sphereSurfaceAreaDiscription: String {
+      return "The SurfaceArea of the Triangle is " + String(format: "%.1f", surfaceArea) + " units."
+    }
+}
+
+
+var vSphere = sphereVolume(radius: 4)
+vSphere.sphereSurfaceAreaDiscription
+vSphere.volume
+vSphere.sphereVolumeDiscription
+
+struct quadrilateral {
+    var a: Double
+    var b: Double
+    var c: Double
+    var d: Double
+    var height: Double
+    
+    var perimeter: Double {
+        return a + b + c + d
+    }
+    var area: Double {
+        return (a + b) * height / 2
+    }
+    var quadrilateralPerimeterDescription: String {
+    return "The Perimeter of the quadrilateral is " + String(format: "%.1f", perimeter) + "Square units."
+    }
+    var quadrilateralAreaDescription: String {
+       return "The area of the quadrilateral is " + String(format: "%.1f", area) + "Square units."
+    }
+    
+}
+
+var aQuadrilateral = quadrilateral(a: 4, b: 3, c: 5, d: 9, height:6)
+aQuadrilateral.area
+aQuadrilateral.perimeter
+aQuadrilateral.quadrilateralPerimeterDescription
+aQuadrilateral.quadrilateralAreaDescription
 /*:
  [Previous: Area Example - Rectangle](@previous) | Page 4
  */
